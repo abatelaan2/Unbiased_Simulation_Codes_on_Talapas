@@ -1,0 +1,31 @@
+;title                   = NVT equilibration 
+define                   = -DPOSRES_WATER
+integrator              = md        
+nsteps                  = 50000    
+dt                      = 0.002    
+continuation            = no
+
+;constraint_algorithm    = lincs     
+constraints             = h-bonds 
+cutoff-scheme           = Verlet         
+nstlist                 = 10        
+rcoulomb                = 1.0       
+rvdw                    = 1.0 
+coulombtype             = PME
+
+tcoupl                  = Berendsen             
+tc-grps                 = System   
+tau_t                   = 0.1          
+ref_t                   = 300   
+
+pcoupl                  = no       
+
+nstxout                 = 500       
+nstvout                 = 500       
+nstenergy               = 500       
+nstlog                  = 500       
+
+pbc                     = xyz 
+refcoord-scaling        = all      
+
+gen_vel                 = yes
